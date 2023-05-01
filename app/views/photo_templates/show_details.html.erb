@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Photo Details</h1>
+  <dl>
+    <dt>Image</dt>
+    <dd><img src="<%= @this_photo.image%>" alt=""></dd>
+    <dt>Caption</dt>
+    <dd><%= @this_photo.caption%></dd>
+    <dt>Owner</dt>
+    <dd><%= @this_photo.poster.username%></dd>
+    <dt>Posted</dt>
+    <dd><%= @this_photo.created_at%></dd>
+    <dt>Edit Photo</dt>
+    <dd>
+      <form action="">
+        <label for="image">Image</label>
+        <input type="text" id="image" value="<%= @this_photo.image%>" >
+        <label for="caption">Caption</label>
+        <textarea name="" id="caption" cols="20" rows="2" ><%= @this_photo.caption%></textarea>
+        <button>Update photo</button>
+      </form>
+    </dd>
+    <dt>Delete Photo</dt>
+    <dd><a href="">Delete this photo</a></dd>
+  </dl>
+  <h2>Comments</h2>
+  <table>
+    <thead>
+      <th>Commenter</th>
+      <th>Comment</th>
+      <th>Posted</th>
+    </thead>
+    <% @this_photo.comments.each do |comment|%>
+    <tr>
+      <td><%= comment.commenter.username%></td>
+      <td><%= comment.body%></td>
+      <td><%= comment.created_at%></td>
+    </tr>
+    <%end%>
+  </table>
+  <h3>Add  new comment</h3>
+  <form action="">
+    <label for="photo_id">Photo ID</label>
+    <input type="text" id="photo_id" value="<%@this_photo.id%>">
+    <label for="author_id">Author ID</label>
+    <input type="text" id="author_id">
+    <label for="comment">Comment</label>
+    <textarea name="" id="" cols="20" rows="2" placeholder="Enter a comment..."></textarea>
+    <button>Add comment</button>
+  </form>
+</body>
+</html>

@@ -8,6 +8,12 @@
 </head>
 <body>
   <h1>List of users</h1>
+  <form action="">
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter a username...">
+    <button>Add user</button>
+  </form>
+  <br>
   <table border="1">
     <thead>
       <th>ID</th>
@@ -18,7 +24,7 @@
       <tr>
         <td><%= a_user.id%></td>
         <td><%= a_user.username%></td>
-        <td><a href="/users/<% a_user.username %>">Show details</a></td>
+        <td><a href="/users/<%= a_user.username %>">Show details</a></td>
       </tr>
     <%end%>
   </table>
