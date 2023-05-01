@@ -13,9 +13,9 @@
     <dd><%= @this_user.id %></dd>
     <dt>Edit user</dt>
     <dd>
-      <form action="">
+      <form action="/update_user/<%= @this_user.id%>">
         <label for="username">Username</label>
-        <input type="text" id="username" value="<%= @this_user.username%>">
+        <input name = "input_username" type="text" id="username" value="<%= @this_user.username%>">
         <button>Update user</button>
       </form>
     </dd>

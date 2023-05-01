@@ -8,13 +8,13 @@
 </head>
 <body>
   <h1>List of photos</h1>
-  <form action="">
+  <form action="/add_photo">
     <label for="image">Image</label>
-    <input type="text" id="image" placeholder="Enter a URL for the image">
+    <input type="text" id="image" placeholder="Enter a URL for the image" name="query_image">
     <label for="caption">Caption</label>
-    <textarea name="test" id="caption" cols="20" rows="2" placeholder="Enter a caption for the photo..."></textarea>
-    <label for="owner_id">Owner Id</label>
-    <input type="text" id="owner_id" placeholder="Enter an ID of a User">
+    <textarea name="query_caption" id="caption" cols="20" rows="2" placeholder="Enter a caption for the photo..."></textarea>
+    <label for="owner_id">Owner ID</label>
+    <input name="query_owner_id" type="text" id="owner_id" placeholder="Enter an ID of a User">
     <button>Add photo</button>
   </form>
   <br>

@@ -19,11 +19,11 @@
     <dd><%= @this_photo.created_at%></dd>
     <dt>Edit Photo</dt>
     <dd>
-      <form action="">
+      <form action="/update_photo/<%= @this_photo.id%>">
         <label for="image">Image</label>
-        <input type="text" id="image" value="<%= @this_photo.image%>" >
+        <input type="text" id="image" value="<%= @this_photo.image%>" name="query_image" >
         <label for="caption">Caption</label>
-        <textarea name="" id="caption" cols="20" rows="2" ><%= @this_photo.caption%></textarea>
+        <textarea name="query_caption" id="caption" cols="20" rows="2" ><%= @this_photo.caption%></textarea>
         <button>Update photo</button>
       </form>
     </dd>
@@ -46,13 +46,13 @@
     <%end%>
   </table>
   <h3>Add  new comment</h3>
-  <form action="">
+  <form action="/add_comment">
     <label for="photo_id">Photo ID</label>
-    <input type="text" id="photo_id" value="<%@this_photo.id%>">
+    <input name="input_photo_id" type="text" id="photo_id" value="<%= @this_photo.id%>">
     <label for="author_id">Author ID</label>
-    <input type="text" id="author_id">
+    <input name="input_author_id" type="text" id="author_id">
     <label for="comment">Comment</label>
-    <textarea name="" id="" cols="20" rows="2" placeholder="Enter a comment..."></textarea>
+    <textarea name="input_comment" id="" cols="20" rows="2" placeholder="Enter a comment..."></textarea>
     <button>Add comment</button>
   </form>
 </body>
