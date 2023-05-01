@@ -50,7 +50,7 @@ class PhotosController < ApplicationController
     # Parameters: {"input_photo_id"=>"test", "input_author_id"=>"test", "input_comment"=>"test"}
     photo_id = params.fetch("input_photo_id")
     author_id = params.fetch("input_author_id")
-    comment = params.fetch("input_comment")
+    comment = params.fetch("Comment")
 
     new_comment = Comment.new
     new_comment.photo_id = photo_id
